@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import './App.css';
 
@@ -17,6 +17,7 @@ const OTHER_GIFS = [
 
 function App() {
   const [gifs, setGifs] = useState(GIFS);
+  useEffect(() => setGifs(OTHER_GIFS), []);
   return (
     <div className="App">
     <section className="App-content">
