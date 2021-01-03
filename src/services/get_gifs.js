@@ -11,12 +11,9 @@ export default function getGifs({keyword = "letras", limit = 5} = {}) {
     .then(res => {
         const gifs = res.data.map(img => {
             const {images, title, id} = img;
-            console.log(images);
             const {url} = images.downsized_medium;
-            console.log(url);
             return {title, id, url};
         });
-        console.log(gifs);
         return gifs;
     })
 }
