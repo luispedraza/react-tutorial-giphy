@@ -8,7 +8,6 @@ import getGifs from './services/get_gifs.js'
 function App() {
   const [gifs, setGifs] = useState([]);
   useEffect(function() {
-    
     getGifs({keyword: "dog"}).then(gifs => setGifs(gifs));
   }, []);
   return (
@@ -16,7 +15,12 @@ function App() {
     <section className="App-content">
     
     {
-      gifs.map(g => <img src={g} alt="Gif encontrado" /> ) 
+      gifs.map(g => {
+        return <div className="gif">
+        <h4>{g.title}</h4>
+        <img src={g.url} alt={g.title} />
+        </div>;
+      }) 
     }
     
     <button onClick={() => setGifs([])}>Cambiar GIFS</button>

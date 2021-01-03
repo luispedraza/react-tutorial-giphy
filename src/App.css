@@ -13,8 +13,7 @@
 }
 
 .App-content img {
-  display: inline;
   margin: 5px;
-  /* width: 100px; */
+  width: 200px;
 }
 
