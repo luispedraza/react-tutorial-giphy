@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react';
 
 import './App.css';
-import getGifs from './services/get_gifs';
-import Gif from './components/gif';
-
-
+import getGifs from './services/get-gifs';
+import ListOfGifs from './components/list-of-gifs';
 
 function App() {
   const [gifs, setGifs] = useState([]);
@@ -15,9 +13,7 @@ function App() {
     <div className="App">
     <section className="App-content">
     
-    {
-      gifs.map(({id, title, url}) => <Gif title={title} url={url} id={id} key={id} />)
-    }
+    <ListOfGifs gifs={gifs} />
     
     <button onClick={() => setGifs([])}>Cambiar GIFS</button>
     
